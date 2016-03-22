@@ -3,6 +3,7 @@ import { TaskListComponent } from './task-list.component';
 import { Task } from './task.model';
 
 
+
 // root component - holds all the data (models) and loads child components
 @Component({
   selector: 'my-app',
