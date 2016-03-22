@@ -5,6 +5,7 @@
 </select>
 
 
+
 <task-display *ngFor="#currentTask of taskList | done:filterDone"        (click)="taskClicked(currentTask)"
 [task]="currentTask"
 [class.selected]="currentTask === selectedTask">

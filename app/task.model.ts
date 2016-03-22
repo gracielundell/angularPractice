@@ -1,7 +1,7 @@
 // Model object - blueprint for different task instances(objects)
 export class Task {
   public done: boolean = false;
-  constructor(public description: string, public id: number) {
+  constructor(public description: string, public id: number, public priority: string) {
 
   }
 }

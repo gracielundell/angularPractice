@@ -29,9 +29,13 @@ export class TaskListComponent {
    this.onTaskSelect.emit(clickedTask);
  }
  // take the new description and use it to create a new task.
- createTask(description: string): void {
+ createTask(inputs: string[]): void {
+   console.log(inputs);
+   var description: string = inputs[0];
+   var priority: string = inputs[1];
+   console.log("in createTask", description, priority);
    this.taskList.push(
-     new Task(description, this.taskList.length)
+     new Task(description, this.taskList.length, priority)
    );
  }
  onChange(filterOption) {
