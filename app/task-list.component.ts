@@ -4,6 +4,7 @@ import { Task } from './task.model';
 import { EditTaskDetailsComponent } from './edit-task-details.component';
 import { NewTaskComponent } from './new-task.component';
 import {DonePipe} from './done.pipe';
+import {PriorityPipe} from './priority.pipe';
 
 // child component of the root component -- used to display a list of tasks
 @Component({
@@ -11,7 +12,7 @@ import {DonePipe} from './done.pipe';
   inputs: ['taskList'],
   outputs: ['onTaskSelect'],
   directives: [TaskComponent, EditTaskDetailsComponent, NewTaskComponent],
-  pipes: [DonePipe],
+  pipes: [DonePipe, PriorityPipe],
   templateUrl: 'app/task-list.component.html'
 })
 // creates the var taskList which is an array of Task objects, creates a property to hold the Event Emitter object for our output
@@ -20,6 +21,7 @@ export class TaskListComponent {
   public onTaskSelect: EventEmitter<Task>;
   public selectedTask: Task;
   public filterDone: string = "notDone";
+  public prioritized: string = "Normal";
  constructor() {
    this.onTaskSelect = new EventEmitter();
  }
@@ -41,5 +43,9 @@ export class TaskListComponent {
  onChange(filterOption) {
   this.filterDone = filterOption;
   console.log(this.filterDone);
+  }
+  onPrioritize(priorityOption) {
+    this.prioritized = priorityOption;
+    console.log(this.prioritized)
   }
 }

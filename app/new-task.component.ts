@@ -33,8 +33,4 @@ export class NewTaskComponent {
     userDescription.value="";
     userPriority.value="";
   }
-  // onPrioritize(priorityOption) {
-  //   this.prioritized = priorityOption;
-  //   console.log(this.prioritized)
-  // }
 }

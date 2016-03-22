@@ -6,7 +6,8 @@
 
 
 
-<task-display *ngFor="#currentTask of taskList | done:filterDone"        (click)="taskClicked(currentTask)"
+<task-display *ngFor="#currentTask of taskList | done:filterDone | priority-pipe:prioritized"
+(click)="taskClicked(currentTask)"
 [task]="currentTask"
 [class.selected]="currentTask === selectedTask">
 </task-display>
